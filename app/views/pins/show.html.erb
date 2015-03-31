@@ -1,0 +1,19 @@
+<% provide(:title, @pin.title) %>
+<div class="row">
+	<h3>
+	  <strong>Title:</strong>
+	  <%= @pin.title %>
+	</h3>
+	<h4><strong>Author: </strong><%= @pin.user.first_name %> <%= @pin.user.last_name %></h4>
+	<p>
+	  <strong>Discription:</strong>
+	  <%= @pin.discription %>
+	</p>
+	<% if @pin.user == current_user %>  
+	<%= link_to 'Edit', edit_pin_path(@pin), class: 'btn btn-success' %>
+	<%= link_to 'Back', my_pins_path,  class: 'btn btn-default' %>
+	<% else %>
+	<%= link_to 'Back', pins_path,  class: 'btn btn-default' %>
+	<% end %>
+
+</div>

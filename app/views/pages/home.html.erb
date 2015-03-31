@@ -1,0 +1,11 @@
+<% provide(:title, "") %>
+<div class="jumbotron">
+	<h1>Pin Rails App</h1>
+	<p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+	<p><% if user_signed_in? %>
+		<%= link_to 'Sign Out Now', destroy_user_session_path, :method => :delete, class: 'btn btn-lg btn-danger'%>
+	  <% else %>
+	  	<%= link_to 'Sign in to Continue', new_user_session_path, class: 'btn btn-lg btn-primary'%>
+	  <% end %>
+	</p>
+</div>
